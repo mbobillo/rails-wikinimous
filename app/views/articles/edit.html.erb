@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Editing article</h1>
+  <p><%= @article.title%></p>
+
+
+  <%= form_with model: @article do |a| %>
+    <%= a.label :title %>
+    <%= a.text_field :title %>
+    <%= a.label :content %>
+    <%= a.text_field :content %>
+    <%= a.submit %>
+  <% end %>
+
+  <%= link_to "Back to list", articles_path %>
+</div>

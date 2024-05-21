@@ -1,0 +1,18 @@
+<div class = "container ">
+  <div class = "d-flex justify-content-between">
+    <h3>Wikinimous</h3>
+    <%= link_to new_article_path do %>
+      <button class = "btn btn-primary">New Article</button>
+    <% end %>
+  </div>
+  <div class = "d-flex flex-column">
+    <% @articles.each do |article| %>
+      <div >
+          <%= link_to article.title, article_path(article) %>
+      </div>
+      <div>
+          <%= article.content%>
+      </div>
+        <% end %>
+  </div>
+</div>

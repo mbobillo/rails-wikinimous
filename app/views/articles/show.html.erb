@@ -1,0 +1,26 @@
+<div class = "container ">
+  <div class = "d-flex justify-content-between">
+    <%= link_to articles_path do %>
+      <h3>Wikinimous</h3>
+    <% end %>
+    <%= link_to new_article_path do %>
+      <button class = "btn btn-primary">New Article</button>
+    <% end %>
+  </div>
+</div>
+<div class = "container d-flex flex-column" >
+  <div>
+    <h1><%= @article.title %></h1>
+  </div>
+  <div>
+    <%= link_to edit_article_path do %>
+      <i class="fa-solid fa-pen"></i>
+    <% end %>
+    <%= link_to article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="fa-solid fa-trash"></i>
+    <% end %>
+  </div>
+  <div>
+    <p><%= @article.content %><p>
+  </div>
+</div>
